@@ -11,10 +11,10 @@
 <body class="">
     <div class="container-fluid text-center">
         <div class="row align-items-start">
-            <div class="col-2 bg-tertiary vh-100">
+            <div class="col-2 bg-secondary-subtle vh-100">
                 <div class="container">
-                    <h1>Práctica 2</h1>
-                    <ul style="list-style: none;">
+                    <h1 class="pt-2">Práctica 2</h1>
+                    <ul style="list-style: none; text-align: justify;">
                         <li class="pt-4">Inicio</li>
                         <li class="pt-4">Agregar productos</li>
                         <li class="pt-4">Listar productos</li>
@@ -26,23 +26,21 @@
                 <h4>Registro y administración de inventario</h4>
                 <form id="formularioRegistro" class="bg-white p-4 rounded shadow-sm">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="mb-3">
-                                <label for="nombre" class="form-label fs-5">ID / Inventario</label>
-                                <input type="number" class="form-control" id="nombre" required placeholder="Ej. 1">
+                                <label for="inventario" class="form-label fs-5">ID / Inventario</label>
+                                <input type="number" class="form-control" id="inventario" required placeholder="Ej. 1">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="mb-3">
-                                <label for="cuenta" class="form-label fs-5">Nombre</label>
-                                <input type="text" class="form-control" id="cuenta" required placeholder="Ej. Manzana">
+                                <label for="nombre" class="form-label fs-5">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" required placeholder="Ej. Manzana">
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="charla" class="form-label fs-5">Departamento</label>
-                            <select id="charla" class="form-select form-select-lg mb-3" name="charla" required>
+                        <div class="col-md-4">
+                            <label for="categoria" class="form-label fs-5">Departamento</label>
+                            <select id="categoria" class="form-select form-select-lg mb-3" name="categoria" required>
                                 <option value="" selected disabled>Seleccione</option>
                                 <option value="Frutas">Frutas</option>
                                 <option value="Verduras">Verduras</option>
@@ -53,16 +51,20 @@
                     <button type="submit" class="btn btn-primary w-100" onclick="imprimirDatos(event);">Guardar
                         datos</button>
                 </form>
-                <div class="col-12">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h2>Listado</h2>
+                <div class="col-12 bg-white p-4 rounded shadow-sm text-center">
+                    <h2>Listado</h2>
+                    <div class="d-flex justify-content-center gap-4 mb-2 pt-2">
+                        <button class="btn btn-outline-dark btn-sm p-2">Lista completa</button>
+                        <button class="btn btn-outline-danger btn-sm">Frutas</button>
+                        <button class="btn btn-outline-success btn-sm">Verduras</button>
+                        <button class="btn btn-outline-primary btn-sm">Lácteos</button>
+                        <button class="btn btn-outline-warning btn-sm">Ocultar productos</button>
                         <button class="btn btn-outline-danger btn-sm"
                             onclick="localStorage.clear(); location.reload();">
                             <i class="fa-solid fa-trash me-1"></i>Limpiar Todo
                         </button>
                     </div>
                     <hr>
-
                     <div id="content" class="row g-3">
                     </div>
                 </div>
